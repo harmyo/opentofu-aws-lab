@@ -49,8 +49,3 @@ Ein leerer State beweist nur, dass OpenTofu glaubt, alles gelöscht zu haben. De
 | EBS-Volumes | `aws ec2 describe-volumes` | leer |
 
 Besonders kritisch sind zwei Punkte. Eine nicht zugeordnete Elastic IP kostet gerade dann Geld, wenn sie nicht benutzt wird. Eine CloudFront-Distribution braucht zum Löschen zwei Schritte, und wenn der Vorgang abbricht, bleibt sie gern stehen.
-## Was ich am Stack verbessern würde
-
-- **Image-Version festlegen:** `copyparty/ac:latest` ist nicht reproduzierbar. Ein `apply` heute und eines in vier Wochen können unterschiedliche Software ausrollen.
-- **Tags erweitern:** Bisher gibt es nur `Name`. `Project`, `Owner` und `Environment` würden die Zuordnung im Cost Explorer ermöglichen.
-- **Zufallszusatz am Namen:** Damit kollidieren mehrere Deployments im selben Konto nicht.
