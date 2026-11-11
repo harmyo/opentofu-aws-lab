@@ -15,5 +15,10 @@ provider "aws" {
 
 resource "aws_iam_user" "demo_user" {
   name = "opentofu-demo-user"
+
+  tags = {
+    Project   = "opentofu-intro"
+    ManagedBy = "OpenTofu"
+  }
 }
 
